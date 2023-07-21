@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SongServiceImpl implements SongService {
 
-    private SongRepository songRepository;
+    private final SongRepository songRepository;
 
     @Override
     public List<Song> getSongs() {
