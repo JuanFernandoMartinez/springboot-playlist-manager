@@ -46,6 +46,7 @@ public class SongController implements SongAPI {
 
     @Override
     public ResponseEntity<Boolean> deleteSong(UUID id) {
+        songService.deleteSong(id);
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
 }

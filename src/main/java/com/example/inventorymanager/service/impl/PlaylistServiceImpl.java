@@ -13,11 +13,11 @@ import java.util.UUID;
 @AllArgsConstructor
 public class PlaylistServiceImpl implements PlaylistService {
 
-    private static  PlaylistRepository playlistRepository;
+    private final  PlaylistRepository playlistRepository;
 
     @Override
     public List<PlayList> getPlayLists() {
-        return playlistRepository.findAll();
+        return (List<PlayList>) playlistRepository.findAll();
     }
 
     @Override
@@ -47,6 +47,7 @@ public class PlaylistServiceImpl implements PlaylistService {
 
     @Override
     public void deletePlayList(UUID id) {
-        playlistRepository.deleteById(id);
+        playlistRepository.delete(playlistRepository.getById(id));
+
     }
 }
