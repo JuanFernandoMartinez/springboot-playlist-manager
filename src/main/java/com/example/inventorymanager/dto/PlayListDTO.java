@@ -1,6 +1,6 @@
-package com.example.inventorymanager.model;
+package com.example.inventorymanager.dto;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,15 +13,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
-public class PlayList {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+public class PlayListDTO {
     private UUID id;
     private String name;
     private String description;
-
-    @ManyToMany
-    private List<Song> songs;
+    private List<SongDTO> songs;
 }
